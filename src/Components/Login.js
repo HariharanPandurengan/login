@@ -34,11 +34,11 @@ function Login() {
             else if(username === list.username && password !== list.password){
                 SetError("")
                 setPassError("Wrong Password")
-                return false
             }
             else if(username === list.username && password === list.password){
                 navigate('Home');
             }
+            return list
         })
      }
 

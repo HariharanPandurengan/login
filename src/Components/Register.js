@@ -32,6 +32,7 @@ function Register() {
             {
                 dataAlreadyExist = true;
             }
+            return list
         })
 
         if(username === ""){
