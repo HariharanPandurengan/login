@@ -42,7 +42,7 @@ function Register() {
         else if(dataAlreadyExist){
             setError("Username already exist")
         }
-        else if(password == ""){
+        else if(password === ""){
             setPasserror("field should not be empty")
         }
         else{
