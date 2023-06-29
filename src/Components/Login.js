@@ -21,29 +21,23 @@ function Login() {
 
     function logind(){
         userdata.map((list)=>{
-            if(username == ""){
+            if(username === ""){
                 SetError("Field should not be empty")
             }
-            else if(username != list.username){
+            else if(username !== list.username){
                 SetError("username dose not exist")
             }
-            else if(username == list.username && password == ""){
+            else if(username === list.username && password === ""){
                 SetError("")
                 setPassError("Field should not be empty")
             }
-            else if(username == list.username && password != list.password){
+            else if(username === list.username && password !== list.password){
                 SetError("")
                 setPassError("Wrong Password")
                 return false
             }
-            else if(username == list.username && password == list.password){
+            else if(username === list.username && password === list.password){
                 navigate('Home');
-            }
-
-            if(username == list.username){
-                SetError("")
-                console.log(username)
-                console.log(list.username)
             }
         })
      }

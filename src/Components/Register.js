@@ -28,13 +28,13 @@ function Register() {
         }
 
         userdata.map((list)=>{
-            if(list.username == username)
+            if(list.username === username)
             {
                 dataAlreadyExist = true;
             }
         })
 
-        if(username == ""){
+        if(username === ""){
             setError("Field should not br empty")
         }
         else if(dataAlreadyExist){
