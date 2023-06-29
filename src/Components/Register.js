@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 function Register() {
 
     const [username, setUsername] = useState("");
-    const[password,setPassword]=useState()
-    const[error,setError]=useState()
+    const[password,setPassword]=useState("")
+    const[error,setError]=useState("")
     const[userdata,setUserdata]=useState([])
-    const[inputVal,setInputVal] = useState()
-    const[passwordVal,setPasswordVal] = useState()
-    const[passerror,setPasserror] =useState()
+    const[inputVal,setInputVal] = useState("")
+    const[passwordVal,setPasswordVal] = useState("")
+    const[passerror,setPasserror] =useState("")
     let dataAlreadyExist = false;
     const navigate = useNavigate();
 
@@ -41,12 +41,15 @@ function Register() {
         }
         else if(dataAlreadyExist){
             setError("Username already exist")
+            return false
         }
-        else if(password === ""){
+        else if(password === "" && username !== ""){
             setError("")
             setPasserror("field should not be empty")
+            return false
         }
-        else{
+
+        if(username !== "" && password !== "" && password !==" "){
         axios.post('http://localhost:8095/signup',values)
         .then(res=>{console.log(res)})
         .catch(err=>{console.log(err)})
@@ -82,7 +85,7 @@ function Register() {
                                 setPassword(event.target.value)
                                 setPasswordVal(event.target.value)
                                 }}/> <br></br>
-                            <small>{passerror}</small>
+                            <small className="error">{passerror}</small>
                         </div>
                         <button onClick={sendtoserver}>REGISTER</button>
                     </form>

@@ -8,9 +8,9 @@ function Login() {
 
     const [username, setUsername] = useState("");
     const[password,setPassword]=useState("")
-    const[userdata,setUserdata] =useState()
+    const[userdata,setUserdata] =useState([])
     const[error,SetError] = useState("")
-    const[passError,setPassError] = useState()
+    const[passError,setPassError] = useState("")
     const navigate = useNavigate();
 
     useEffect(()=>{
