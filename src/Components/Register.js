@@ -43,6 +43,7 @@ function Register() {
             setError("Username already exist")
         }
         else if(password === ""){
+            setError("")
             setPasserror("field should not be empty")
         }
         else{
@@ -80,7 +81,7 @@ function Register() {
                             <input type="password" value={passwordVal} onChange={(event)=>{
                                 setPassword(event.target.value)
                                 setPasswordVal(event.target.value)
-                                }}/>
+                                }}/> <br></br>
                             <small>{passerror}</small>
                         </div>
                         <button onClick={sendtoserver}>REGISTER</button>
