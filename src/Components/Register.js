@@ -12,6 +12,7 @@ function Register() {
     const[userdata,setUserdata]=useState([])
     const[inputVal,setInputVal] = useState()
     const[passwordVal,setPasswordVal] = useState()
+    const[passerror,setPasserror] =useState()
     let dataAlreadyExist = false;
     const navigate = useNavigate();
 
@@ -40,6 +41,9 @@ function Register() {
         }
         else if(dataAlreadyExist){
             setError("Username already exist")
+        }
+        else if(password == ""){
+            setPasserror("field should not be empty")
         }
         else{
         axios.post('http://localhost:8095/signup',values)
@@ -77,7 +81,7 @@ function Register() {
                                 setPassword(event.target.value)
                                 setPasswordVal(event.target.value)
                                 }}/>
-                            <small></small>
+                            <small>{passerror}</small>
                         </div>
                         <button onClick={sendtoserver}>REGISTER</button>
                     </form>
