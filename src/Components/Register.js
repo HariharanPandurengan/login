@@ -36,10 +36,6 @@ function Register() {
             return list
         })
 
-        function emailValidation(email){
-            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-        }
-
         if(username === ""){
             setError("Field should not br empty")
         }
@@ -54,14 +50,15 @@ function Register() {
         }
         else if(!emailValidation(username)){
             setError("Enter a vaild Email")
+            return false
         }
         else if(username !== "" && password !== "" && password !==" "&& emailValidation(username)){
-        axios.post('http://localhost:8095/signup',values)
-        .then(res=>{console.log(res)})
-        .catch(err=>{console.log(err)})
-        relocate();
+            axios.post('http://localhost:8095/signup',values)
+            .then(res=>{console.log(res)})
+            .catch(err=>{console.log(err)})
+            relocate();
         }
-}
+    }
 
     const handleSubmit = (event)=>{
         event.preventDefault();
@@ -69,6 +66,10 @@ function Register() {
 
     function relocate(){
         navigate('/');
+    }
+
+    function emailValidation(email){
+        return /^\w+([-]?\w+)*@\w+([\.-]?\w+)*(\w{2,3})+$/.test(email);
     }
 
     return ( 
