@@ -69,7 +69,7 @@ function Register() {
     }
 
     function emailValidation(email){
-        return /^\w+([-]?\w+)*@\w+([\.-]?\w+)*(\w{2,3})+$/.test(email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     return ( 
