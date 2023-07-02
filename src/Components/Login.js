@@ -53,8 +53,8 @@ function Login() {
                 <h1>LOGIN</h1>
                 <form action="" onSubmit={handleSubmit}>
                     <div>
-                        <p>Username</p>
-                        <input onChange={(event)=>setUsername(event.target.value)}/> <br></br>
+                        <p>Email</p>
+                        <input type="email" onChange={(event)=>setUsername(event.target.value)}/> <br></br>
                         <small className="error">{error}</small>
                     </div>
                     <div>

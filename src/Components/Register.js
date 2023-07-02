@@ -72,15 +72,15 @@ function Register() {
                     <h1>REGISTER</h1>
                     <form action="" onSubmit={handleSubmit}>
                         <div>
-                            <p>Username</p>
-                            <input value={inputVal} onChange={(event)=>{
+                            <p>Enter Your Email</p>
+                            <input type="email" value={inputVal} onChange={(event)=>{
                                 setUsername(event.target.value)
                                 setInputVal(event.target.value)
                                 }}/> <br></br>
                             <small className="error">{error}</small>
                         </div>
                         <div>
-                            <p>Password</p>
+                            <p>Create a password</p>
                             <input type="password" value={passwordVal} onChange={(event)=>{
                                 setPassword(event.target.value)
                                 setPasswordVal(event.target.value)
