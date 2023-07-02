@@ -36,6 +36,10 @@ function Register() {
             return list
         })
 
+        function emailValidation(email){
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+        }
+
         if(username === ""){
             setError("Field should not br empty")
         }
@@ -48,8 +52,10 @@ function Register() {
             setPasserror("field should not be empty")
             return false
         }
-
-        if(username !== "" && password !== "" && password !==" "){
+        else if(!emailValidation(username)){
+            setError("Enter a vaild Email")
+        }
+        else if(username !== "" && password !== "" && password !==" "&& emailValidation(username)){
         axios.post('http://localhost:8095/signup',values)
         .then(res=>{console.log(res)})
         .catch(err=>{console.log(err)})
@@ -73,7 +79,7 @@ function Register() {
                     <form action="" onSubmit={handleSubmit}>
                         <div>
                             <p>Enter Your Email</p>
-                            <input type="email" value={inputVal} onChange={(event)=>{
+                            <input value={inputVal} onChange={(event)=>{
                                 setUsername(event.target.value)
                                 setInputVal(event.target.value)
                                 }}/> <br></br>
