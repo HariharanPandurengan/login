@@ -76,6 +76,7 @@ function Register() {
         <>
             <section id="section">
                 <div id="max-width">
+                <div id="title"><h2 className="t-1">H</h2><h2 className="t-2">A</h2><h2 className="t-3">H</h2><h2 className="t-4">A</h2><h2 className="t-5">N</h2></div>
                     <h1>REGISTER</h1>
                     <form action="" onSubmit={handleSubmit}>
                         <div>

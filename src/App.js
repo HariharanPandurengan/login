@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import './App.css';
 import Login from "./Components/Login"
 import Register from "./Components/Register";
@@ -6,6 +6,11 @@ import Home from "./Components/Home";
 import {Routes, Route } from "react-router-dom";
 
 function App() {
+
+  useEffect(()=>{
+    document.title = "Hahan Chat"
+  })
+
   return (
     <>
       <Routes>
